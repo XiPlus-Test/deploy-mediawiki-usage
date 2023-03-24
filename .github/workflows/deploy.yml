@@ -33,6 +33,12 @@ jobs:
           family: wikipedia
           mylang: zh
 
+      - name: user-config
+        run: cat user-config.py
+
+      - name: user-password
+        run: cat user-password.py
+
       - uses: XiPlus-Test/deploy-mediawiki/.github/actions/deploy@main
         with:
           src: sandbox.wikitext
