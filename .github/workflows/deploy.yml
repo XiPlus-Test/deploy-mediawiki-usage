@@ -25,20 +25,20 @@ jobs:
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
-      - uses: XiPlus-Test/deploy-mediawiki/.github/actions/setup.yml@main
+      - uses: XiPlus-Test/deploy-mediawiki/.github/actions/setup@main
         with:
           username: ${{ secrets.BOT_NAME }}
           password: ${{ secrets.BOT_PASS }}
           family: wikipedia
           mylang: zh
 
-      - uses: XiPlus-Test/deploy-mediawiki/.github/actions/deploy.yml@main
+      - uses: XiPlus-Test/deploy-mediawiki/.github/actions/deploy@main
         with:
           src: sandbox.wikitext
           dst: User:Xiplus/沙盒8
           summary: "${{ steps.vars.outputs.sha_short }} ${{ github.event.head_commit.message }}"
 
-      - uses: XiPlus-Test/deploy-mediawiki/.github/actions/deploy.yml@main
+      - uses: XiPlus-Test/deploy-mediawiki/.github/actions/deploy@main
         with:
           src: sandbox1.js
           dst: User:Xiplus/沙盒1.js
