@@ -12,6 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: check env
+        run: |
+          pwd
+          ls -al
+
       - uses: XiPlus-Test/deploy-mediawiki/.github/actions/setup@main
         with:
           username: Xiplus
