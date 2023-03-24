@@ -27,7 +27,8 @@ jobs:
 
       - uses: XiPlus-Test/deploy-mediawiki/.github/actions/setup@main
         with:
-          username: ${{ secrets.BOT_NAME }}
+          username: Xiplus
+          botname: ${{ secrets.BOT_NAME }}
           password: ${{ secrets.BOT_PASS }}
           family: wikipedia
           mylang: zh
