@@ -17,7 +17,7 @@ jobs:
           pwd
           ls -al
 
-      # - uses: XiPlus-Test/deploy-mediawiki/.github/actions/setup@main
+      # - uses: xiplus-mediawiki-programs/deploy-mediawiki/.github/actions/setup@main
       #   with:
       #     username: Xiplus
       #     botname: ${{ secrets.BOT_NAME }}
@@ -25,7 +25,7 @@ jobs:
       #     family: wikipedia
       #     mylang: zh
 
-      - uses: XiPlus-Test/deploy-mediawiki/.github/actions/setup@main
+      - uses: xiplus-mediawiki-programs/deploy-mediawiki/.github/actions/setup@main
         with:
           username: Xiplus
           botname: ${{ secrets.TEST_NAME }}
@@ -47,19 +47,19 @@ jobs:
         id: vars
         run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
-      # - uses: XiPlus-Test/deploy-mediawiki/.github/actions/deploy@main
+      # - uses: xiplus-mediawiki-programs/deploy-mediawiki/.github/actions/deploy@main
       #   with:
       #     src: sandbox.wikitext
       #     dst: User:Xiplus/沙盒8
       #     summary: "${{ steps.vars.outputs.sha_short }} ${{ github.event.head_commit.message }}"
 
-      # - uses: XiPlus-Test/deploy-mediawiki/.github/actions/deploy@main
+      # - uses: xiplus-mediawiki-programs/deploy-mediawiki/.github/actions/deploy@main
       #   with:
       #     src: sandbox1.js
       #     dst: User:Xiplus/沙盒1.js
       #     summary: "${{ steps.vars.outputs.sha_short }} ${{ github.event.head_commit.message }}"
 
-      - uses: XiPlus-Test/deploy-mediawiki/.github/actions/deploy@main
+      - uses: xiplus-mediawiki-programs/deploy-mediawiki/.github/actions/deploy@main
         with:
           src: sandbox.wikitext
           dst: 測試4
