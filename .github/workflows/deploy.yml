@@ -12,18 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install deploy dependencies
-        run: |
-          pip install mwparserfromhell>=0.5.0 pywikibot
-
-      - name: Get short sha
-        id: vars
-        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-
       - uses: XiPlus-Test/deploy-mediawiki/.github/actions/setup@main
         with:
           username: Xiplus
@@ -37,6 +25,10 @@ jobs:
 
       - name: user-password
         run: cat user-password.py
+
+      - name: Get short sha
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - uses: XiPlus-Test/deploy-mediawiki/.github/actions/deploy@main
         with:
